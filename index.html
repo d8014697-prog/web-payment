@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Payment Rakaxyz</title>
+    <!-- Font Awesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Hubungkan file CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loader"></div>
+        <p>⏳ MEMUAT WEB PAYMENT ...</p>
+    </div>
+
+    <div class="container">
+        
+        <!-- MAIN MENU -->
+        <div id="main-menu" style="display: none; width: 100%;">
+            <!-- Ganti URL gambar profil di bawah ini -->
+            <img src="https://ui-avatars.com/api/?name=Rakaxyz&background=333&color=fff&rounded=true" alt="Profile" class="profile-pic">
+            <h1>Web Payment Rakaxyz</h1>
+
+            <button class="btn-link" onclick="toggleMenu('payment-menu')">
+                <i class="fa-solid fa-credit-card"></i> All Payment
+            </button>
+            <button class="btn-link" onclick="window.location.href='https://wa.me/6281234567890'">
+                <i class="fa-brands fa-whatsapp"></i> WhatsApp
+            </button>
+            <button class="btn-link" onclick="window.location.href='https://tiktok.com/@rakabukanrakak'">
+                <i class="fa-brands fa-tiktok"></i> TikTok
+            </button>
+        </div>
+
+        <!-- PAYMENT MENU -->
+        <div id="payment-menu">
+            <img src="https://ui-avatars.com/api/?name=Rakaxyz&background=333&color=fff&rounded=true" alt="Profile" class="profile-pic">
+            <h1>Web Payment Rakaxyz</h1>
+
+            <button class="btn-link" onclick="showDetail('qris')"><i class="fa-solid fa-qrcode"></i> Qris</button>
+            <button class="btn-link" onclick="showDetail('dana')"><i class="fa-solid fa-wallet"></i> Dana</button>
+            <button class="btn-link" onclick="showDetail('gopay')"><i class="fa-solid fa-mobile-screen"></i> Gopay</button>
+            <button class="btn-link" onclick="showDetail('ovo')"><i class="fa-solid fa-circle-dollar-to-slot"></i> Ovo</button>
+            
+            <p class="info-text">"JIKA SUDAH TRANSFER HARAP KIRIM BUKTI KE ADMIN AGAR PEMBAYARAN BISA DI PROSES"</p>
+
+            <button class="btn-link" style="background: rgba(0,0,0,0.3);" onclick="toggleMenu('main-menu')">
+                <i class="fa-solid fa-arrow-left"></i> Kembali
+            </button>
+
+            <!-- Detail Pembayaran yang Muncul Saat Diklik -->
+            <div id="qris-detail" class="payment-detail">
+                <!-- Ganti dengan URL gambar QRIS Anda -->
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg" alt="QRIS">
+                <p style="font-weight: bold; margin-bottom: 5px;">NMID : ID102657356862</p>
+                <p style="font-size: 0.9rem;">A/N: Rakaxyz</p>
+            </div>
+
+            <div id="dana-detail" class="payment-detail">
+                <h2 style="margin-bottom: 10px;">DANA</h2>
+                <h3 id="no-dana">081234567890</h3>
+                <p style="font-size: 0.9rem; margin-top:5px;">A/N: Rakaxyz</p>
+                <button class="copy-btn" onclick="copyText('no-dana')"><i class="fa-solid fa-copy"></i> Salin</button>
+            </div>
+
+            <div id="gopay-detail" class="payment-detail">
+                <h2 style="margin-bottom: 10px;">GOPAY</h2>
+                <h3 id="no-gopay">081234567890</h3>
+                <p style="font-size: 0.9rem; margin-top:5px;">A/N: Rakaxyz</p>
+                <button class="copy-btn" onclick="copyText('no-gopay')"><i class="fa-solid fa-copy"></i> Salin</button>
+            </div>
+
+            <div id="ovo-detail" class="payment-detail">
+                <h2 style="margin-bottom: 10px;">OVO</h2>
+                <h3 id="no-ovo">081234567890</h3>
+                <p style="font-size: 0.9rem; margin-top:5px;">A/N: Rakaxyz</p>
+                <button class="copy-btn" onclick="copyText('no-ovo')"><i class="fa-solid fa-copy"></i> Salin</button>
+            </div>
+        </div>
+
+        <p class="copyright">© Copyright By Rakaxyz</p>
+
+        <!-- Color Picker -->
+        <div class="color-picker">
+            <div class="color-dot" style="background: #9b72cb;" onclick="changeTheme('#9b72cb')"></div>
+            <div class="color-dot" style="background: #e74c3c;" onclick="changeTheme('#e74c3c')"></div>
+            <div class="color-dot" style="background: #2ecc71;" onclick="changeTheme('#2ecc71')"></div>
+            <div class="color-dot" style="background: #3498db;" onclick="changeTheme('#3498db')"></div>
+            <div class="color-dot" style="background: #f1c40f;" onclick="changeTheme('#f1c40f')"></div>
+            <div class="color-dot" style="background: #e67e22;" onclick="changeTheme('#e67e22')"></div>
+            <div class="color-dot" style="background: #ff9ff3;" onclick="changeTheme('#ff9ff3')"></div>
+            <div class="color-dot" style="background: #34495e;" onclick="changeTheme('#34495e')"></div>
+        </div>
+
+    </div>
+
+    <!-- Hubungkan file JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
